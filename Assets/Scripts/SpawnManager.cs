@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     
 
     // Start is called before the first frame update
-    void Start()
+    void Start() //grabbing camera in order to shoot ray from it to the ground collider
     {
         cam = Camera.main;
         
@@ -32,14 +32,14 @@ public class SpawnManager : MonoBehaviour
 
             if(Physics.Raycast(ray, out hit))
             {
-                StartCoroutine(DestroySpawnedObject());
+                StartCoroutine(DestroySpawnedObject()); // destroys the spawned coffin after 2 seconds
             }
         }
     }
 
     private IEnumerator DestroySpawnedObject()
     {
-        GameObject coffinClone = Instantiate(spawnCoffin, hit.point + offset, Quaternion.identity);
+        GameObject coffinClone = Instantiate(spawnCoffin, hit.point + offset, Quaternion.identity); //spawns coffin at an offset above the ground
 
         yield return new WaitForSeconds(2);
 

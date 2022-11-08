@@ -13,7 +13,7 @@ public class MovingAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void FixedUpdate() // moves the transform forward constantly which checking if the ray directed at it is within a certain limit. If it is then turn. 
     {
         transform.Translate(0, 0, speed * Time.deltaTime);
         Ray ray = new Ray(transform.position, transform.forward);
