@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
+    //managing scenes in ui
+
     // Start is called before the first frame update
     void Start()
     {

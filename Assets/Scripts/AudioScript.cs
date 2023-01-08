@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioScript : MonoBehaviour
 {
-    void Awake()
+    void Awake() // keeping audio in loop and not destroyed after change in scenes
     {
         DontDestroyOnLoad(transform.gameObject);
     }
